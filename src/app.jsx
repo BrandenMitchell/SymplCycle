@@ -1,13 +1,29 @@
 import React from "react";
 import './index.css';
-
+import {Routes, Route} from "react-router-dom"
 import Sidebar from "./components/sidebar.jsx";
+import Journal from "./components/journal.jsx"
+import Dashboard from "./components/Dashboard.jsx";
+import Calendar from "./components/calendar.jsx"
 export default function App() {
     return (
-        <>
-            <Sidebar />
-        </>
+        <div className="App">
+            <aside className="navBar">
+                    <Sidebar />
+            </aside>
+            <div className="mainMenu">
+                <Routes>
 
+                    <Route path="/main_window" element={<Dashboard/>}/>
+                    <Route path="/Home" element={<Dashboard/>}/>
+                    <Route path="/Journal" element={<Journal/>}/>
+                    <Route path="/Calendar" element={<Calendar/>}/>
+
+                </Routes>
+            </div>
+            
+
+        </div>
         
     )
 }

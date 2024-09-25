@@ -4,9 +4,11 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import DeblurIcon from '@mui/icons-material/Deblur';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+
+import {Link} from "react-router-dom"
 export default function Sidebar() {
     return(
-        <nav className="sideBar">
+        <div className="sideBar">
             <span className="collapse"><DeblurIcon/></span>
             {/* <span className="collapse"><DarkModeRoundedIcon/></span> */}
             <h2 className="name">
@@ -15,32 +17,37 @@ export default function Sidebar() {
             </h2>
             <ul className="nav">
                 <li>
-                    <a href="#">
+                    <Link to="/Home">
                         <HomeRoundedIcon />
                         <span>Home</span>
-                    </a>
+                    </Link>
+                    
                 </li>
                 <li>
-                    <a href="">
+                    <Link to="/Journal">
                         <AutoStoriesIcon />
                         <span>Journal</span>
-                    </a>
+                    
+                    </Link>
                 </li>
                 <li>
-                    <a href="">
+                    <Link to="/Calendar">
+                        
                         <CalendarMonthIcon/>
                         <span>Calendar</span>
-                    </a>
+                    
+                    </Link>
+                    
                 </li>
             </ul>
             <div className="Factbox">
-                <h1>Todays Fact</h1>
+                <h1>Did you Know?</h1>
                 <div className="fact">
-                    I am some cool fact of the day
+                    "While on your period your testosterone rises"
 
                 </div>
             </div>
-        </nav>
+        </div>
     )
         
     

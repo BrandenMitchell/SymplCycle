@@ -25,6 +25,7 @@
     "css-loader": "^6.11.0",
     "electron": "32.1.0",
     "node-loader": "^2.0.0",
+    "react-router-dom": "^6.26.2",
     "style-loader": "^3.3.4"
   },
   "keywords": [],
@@ -38,6 +39,8 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.0",
     "@mui/material": "^6.1.0",
+    "@mui/x-date-pickers": "^7.17.0",
+    "dayjs": "^1.11.13",
     "electron-squirrel-startup": "^1.0.1"
   }
 }

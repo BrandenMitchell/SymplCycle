@@ -8,14 +8,16 @@ palate to url https://coolors.co/palette/7400b8-6930c3-5e60ce-5390d9-4ea8de-48bf
   #cae9ff almost white txt color
   #f6fff8 cream white txt color
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 :root{
-  --Primary-font: 'Lucida Sans' ;
-  --Primary-body-color: #020202b6;
-  --Secondary-body-color: #0b0b19 ;
-  --Highlight-color: #3d348b ;
-  --Hightlight-red: #6a040f;
-  --Primary-text-color: #5390d9 ;
+  --Primary-font:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* --Primary-body-color: #020202b6; */
+  --Primary-body-color:  #f9eae1;
+  --Secondary-body-color: #f6a34f ;
+  --Highlight-color: #c9184a;
+  /* --Hightlight-red: #6a040f; */
+  --Hightlight-green: #cfe1b9;
+  --Primary-text-color: #fdc0d8;
   --Secondary-text-color: #f6fff8 ;
   --text-color: #f6fff8 ;
   --Sidebar-Transition: transition(width 3s ease);
@@ -24,18 +26,22 @@ palate to url https://coolors.co/palette/7400b8-6930c3-5e60ce-5390d9-4ea8de-48bf
 }
 
 html , body{
-  background-color: var(--Secondary-body-color);
+  /* background-color: var(--Secondary-body-color); */
+  background-color: var(--Primary-body-color);
   color: var(--Primary-text-color);
   height: 100%;
   width: 100%;
   margin: 0px;
   padding: 0px;
-
+  font-family: var(--Primary-font);
+  font-weight: bold;
 }
+
+
 
 h2{
   color: var(--Primary-text-color);
-  font-family: var(--Primary-font);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 7px;
 
 }
@@ -43,14 +49,36 @@ h2{
 span {
   margin-left: 0.5rem;
 }
+.App{
 
+  display: flex;
+  height: 100vh;
 
-.sideBar {
+}
+
+.navBar{
   background-color:var(--Primary-body-color);
   width: 4rem;
   height: 100vh;
-  position: fixed;
   transition: width 1.4s ease-out;
+  margin-right: 30px;
+
+}
+
+.mainMenu{
+  flex: 1;
+}
+
+
+.sideBar {
+
+  background-color:var(--Secondary-body-color);
+  width: 4rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  transition: width 1.4s ease-out;
+  margin-right: 30px;
   
 }
 
@@ -68,8 +96,13 @@ span {
   margin: 2px 3px;
 }
 
+.navBar:hover{
+  width: 11rem;  
+  transition: width 1.4s ease;
+
+}
 .sideBar .collapse svg:hover{
-  color: var(--Hightlight-red); 
+  color: var(--Hightlight-green); 
 }
 
 .collapse:hover{
@@ -85,7 +118,7 @@ span {
 }
 
 .sideBar #cycle{
-  color: var(--Hightlight-red);
+  color: var(--Hightlight-green);
   font-size: 23px;
   
 }
@@ -106,7 +139,7 @@ span {
   flex-direction: row;
   justify-content: center;
   margin-left: 1.5rem;
-  color: var(--Hightlight-red); 
+  color: var(--Hightlight-green); 
 }
 
 .sideBar span {
@@ -132,8 +165,8 @@ span {
   position: absolute;
   bottom: 2%;
   width: fit-content;
-  color: var(--Secondary-text-color);
-  background-color: var(--Highlight-color) ;
+  color: var(--Primary-text-color);
+  background-color: #fdfffc ;
   border-radius: 1em;
   margin: 5px 10px 10px 10px;
   padding: 8px;
@@ -145,13 +178,13 @@ span {
 }
 
 .Factbox:hover{
-  background-color: var(--Hightlight-red);
-  color: var(--text-color);
+  background-color: var(--Highlight-color) ;
 }
 
 .sideBar:hover {
   width: 11rem;  
   transition: width 1.4s ease;
+ 
 }
 
 .sideBar:hover .name{
@@ -165,23 +198,191 @@ span {
   animation: fadeIn .2s ease forwards;
 }
 
+.sideBar:hover li{
+  animation: fadeIn .2s ease forwards;
+}
+
 .sideBar:hover .Factbox{
   display: block;
-  animation: fadeIn 1s ease forwards;
+  animation: fadeIn 3s ease forwards;
+}
+
+.Dashboard{
+  margin: 10px;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* .calendarContainer{
+  flex: 1;
+} */
+
+.journal{
+  flex: 1;
+  height: 100%;
+  background-color: var(--Hightlight-green);
+  border-radius: 15px;
+  margin-right: 20px;
+  
+
+}
+.journal .header{
+  width: 100%;
+  
+}
+.journal .mainText{
+  margin: 10px auto;
+  height: 90%;
+}
+#headerArea{
+  max-width: 60%;
+  min-width: 20%;
+  display: flex;
+  margin: 5px auto;
+  resize: none;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  background-color: var(--Primary-body-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  font-size: larger;
+}
+
+#journalEntry{
+  display: flex;
+  resize: none;
+  width: 95%;
+  margin: 8px auto;
+  height: 97%;
+  border-radius: 5px;
+  border:none;
+  padding: 5px;
+  background-color: var(--Hightlight-green);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 200;
+  font-size: large;
+}
+#journalEntry:focus , #headerArea:focus{
+  outline: none;
 }
 
 
+/* new calendar shit */
 
-
+.wrapper{
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+/* new cal shit */
 
 /* variables */
 @keyframes fadeIn{
   from{
     opacity: 0;
     font-size: 0;
+
   }
   to{
     opacity: 1;
     font-size: auto;
+
+  }
+}
+@keyframes liFade{
+  from{
+    width: 0;
+
+  }
+  to{
+    width: 10em;
+
   }
 }
