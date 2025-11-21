@@ -35,3 +35,7 @@ Cross-platform support through Electron
 
 Images: 
 
+![Dashboard Image ](SymplCycleImages/sympcyclepic.jpg)
+
+![Journal Image ](SymplCycleImages/symplCycledev2.png)
+
